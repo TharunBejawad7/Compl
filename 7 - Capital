@@ -1,0 +1,15 @@
+%{
+%}
+%%
+[A-Z]+[\t\n] {printf("%s",yytext);}
+. ;
+%%
+int main()
+{
+printf("enter the input");
+yylex();
+}
+int yywrap()
+{
+return 1;
+}
