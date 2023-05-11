@@ -1,0 +1,17 @@
+%{
+int c=0;
+%}
+%%
+[A-Za-z0-9]+ {c++;printf("%s",yytext);}
+. ;
+%%
+int yywrap(void){
+return 1;
+}
+int main()
+{
+printf("enter the string:");
+yylex();
+printf("no of words=%d\n",
+                            c);
+}
