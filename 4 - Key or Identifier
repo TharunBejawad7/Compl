@@ -1,0 +1,14 @@
+%{
+%}
+%%
+[if|else|return|main|int|printf|for|while|else if|do|float|break|continue|char|string|case|scanf]+ {printf("\n keyword \n:");}
+.+ {printf("\n identifier \n:");}
+%%
+int yywrap(){}
+int main()
+{
+printf("\n enter the input:");
+yylex();
+printf("\n");
+return 0;
+}
