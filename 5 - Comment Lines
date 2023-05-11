@@ -1,0 +1,15 @@
+%{
+int c=0;
+%}
+%%
+"//"[a-z]+|"/*"[a-z]+ {c++;printf("/n %s is a commment line\n",yytext);}
+.+ {printf("input is not comment line");}
+%%
+int yywrap(){}
+int main()
+{
+printf("enter:");
+yylex();
+printf("\n no of comment lines:%d",c);
+return 0;
+}
