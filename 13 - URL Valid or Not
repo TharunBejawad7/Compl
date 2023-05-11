@@ -1,0 +1,18 @@
+%{
+%}
+%%
+((http)|(www))s?:\/\/[a-zA-Z0-9](.[a-z])+(.[a-zA-Z0-9+=?]*)* {printf("\nURL Valid\n");}
+
+.+ {printf("\nURL Invalid\n");}
+
+%%
+int main()
+{
+	printf("\nEnter URL : ");
+	yylex();
+	printf("\n");
+}
+int yywrap()
+{
+return 0;
+}
