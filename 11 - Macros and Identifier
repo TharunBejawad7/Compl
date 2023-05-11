@@ -1,0 +1,19 @@
+%{
+int macro,header;
+%}
+%%
+^#define {macro++;}
+^#include {header++;}
+%\n {}
+%%
+int yywrap(void){
+	return 1;
+}
+int main(int argc,char *argv[])
+{
+	yyin=fopen(argv[1],"r");
+	yylex();
+	printf("no of macros=%d\n",macro);
+	printf("no of header=%d\n", header);
+	fclose(yyin);
+}
